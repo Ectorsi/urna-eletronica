@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+@keyframes pisca{
+    0% {opacity: .2;}
+    50% {opacity: 1;}
+    100% {opacity: .2;}
+}
+
 body{
     display: flex;
     justify-content: center;
@@ -56,7 +62,9 @@ body{
     cursor: pointer;
     box-shadow: 3px 3px 0px #555;
 }
-
+.teclado--botao:active{
+    transform: translateY(2px);
+}
 .botao--branco{
     background-color: white;
     color: black;
@@ -102,27 +110,63 @@ body{
     height: 50px;
     display: flex;
 }
+.pisca{
+    animation-name: pisca;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
 .numero{ /* Quadrado com os núemros */
     width: 30px;
-    height: 35px;
-    border: solid 2px black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 40px;
+    border: solid 1px black;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
     font-size: 1.3em;
-    margin-left: 5px;
+    /* margin-left: 5px; */
 }
 .d-1-4{     /* NOME, PARTIDO, VICE-PREFEITO*/
     flex: 1;
     line-height: 30px;
 }
-.d-1-right{
-    width: 90px;
-}
 
+.d-1-right{ /* Campo - img - prefeito*/
+    width: 165px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.d-1-image img{ /* img prefeito*/
+    width: 100%;
+}
+.d-1-image{
+    border: solid 1px black;
+    background-color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 1em;
+}
+.small{
+    width: 70%;
+    font-size: .9em;
+}
 .d-2{
     height: 50px;
     border-top: solid 2px black;
     padding-left: 10px;
     font-size: .9em;
+}
+
+.aviso--grande{
+    font-size: 2.1em;
+    font-weight: bold;
+}
+
+.aviso--gigante{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    font-weight: bold;
 }
